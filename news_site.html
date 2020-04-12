@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="COM533 Weather Application for LFNEWS Organisation using API's to generate dynamic content" />
+    <meta name="Callum Carville" content="Ulster University Student Author is Callum Carville" />
+    <link rel="shortcut icon" type="image/svg" href="img/LF.svg" alt="LFLOGO"/>
+    <title>LFNEWS</title>
+    <!-- Custom styles for this template -->
+    <link href="css/production.css" rel="stylesheet" />
+    <!-- Font awesome CSS -->
+    <link
+      href="css/font-awesome-4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+ <!-- Section: Preloader -->
+<div class='loader'>
+  <div class='loader-container'>
+    <div class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+</div>
+    <nav class="navbar sticky-top navbar-expand-xl navbar-dark bg-danger">
+      <a class="navbar-brand" >LFNEWS</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContentXL"
+        aria-controls="navbarSupportedContentXL"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContentXL">
+        <ul class="navbar-nav mr-auto nav-tabs" role="tablist">
+          <li class="nav-item">
+            <a href="#home" class="nav-link active" data-option="Home" role="tab" data-toggle="tab">Home </a>
+          </li>
+          <li class="nav-item">
+            <a href="#latest" data-option="Latest" class="nav-link" role="tab" data-toggle="tab">Latest</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              id="navbarDropdownXL"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false">Sports</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownXL">
+              <a href="#boxing" data-option="Boxing" class="dropdown-item" role="tab" data-toggle="tab">Boxing</a>
+              <div class="dropdown-divider"></div>
+              <a href="#golf" data-option="Golf" class="dropdown-item" role="tab" data-toggle="tab">Golf</a>
+              <div class="dropdown-divider"></div>
+              <a href="#football" data-option="Football" class="dropdown-item" role="tab" data-toggle="tab">Football</a>
+              <div class="dropdown-divider"></div>
+              <a href="#tennis" data-option="Tennis" class="dropdown-item" role="tab" data-toggle="tab">Tennis</a>
+              <div class="dropdown-divider"></div>
+              <a href="#rugby" data-option="Rugby" class="dropdown-item" role="tab" data-toggle="tab">Rugby</a>
+              <div class="dropdown-divider"></div>
+              <a href="#racing" data-option="Racing" class="dropdown-item" role="tab" data-toggle="tab">Racing</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="#politics" data-option="Politics" class="nav-link" role="tab" data-toggle="tab">Politics</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link" role="tab" data-toggle="tab">Contact</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <span id="none" class="white"></span>&nbsp;&nbsp;
+          <input
+          data-step="2" data-intro="Enter your search value here for article search."
+          id="query"
+            class="form-control mr-sm-2 introjs-showElement introjs-relativePosition"
+            type="search"
+            placeholder="Search"
+            required/>
+          <a href="#search" role="tab" data-option="Search" data-toggle="tab"><button class="btn btn-outline-light my-2 my-sm-0 introjs-showElement introjs-relativePosition" type="button" id="searchForm" data-step="3" data-intro="Click the search icon to complete search.">
+            🔎
+          </button></a>&nbsp;&nbsp;
+          <button class="btn btn-outline-light my-2 my-sm-0 introjs-showElement introjs-relativePosition" type="button" id="helpForm" data-intro='This help demo will provide a tutorial as to how to perform a search!'>
+            ❓
+          </button>
+        </form>
+      </div>
+    </nav>
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane fade in show active"  id="home">
+  <!--Carousel Wrapper https://codepen.io/mdbootstrap/pen/gGqKOa-->
+    <div
+      id="carousel-example-2"
+      class="carousel slide carousel-fade mb-5"
+      data-ride="carousel">
+      <!--Indicators-->
+      <ol class="carousel-indicators">
+        <li
+          data-target="#carousel-example-2"
+          data-slide-to="0"
+          class="active"></li>
+        <li data-target="#carousel-example-2" data-slide-to="1"></li>
+        <li data-target="#carousel-example-2" data-slide-to="2"></li>
+      </ol>
+      <!--/.Indicators-->
+      <!--Slides-->
+      <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active">
+          <div class="view hm-white-slight">
+            <img
+              class="d-block w-100 i1"
+              src="img/bg1.jpf"
+              alt="First slide"/>
+            <div class="mask"></div>
+          </div>
+          <div class="carousel-caption">
+            <h3 class="h3-responsive t1">LFNEWS</h3>
+            <u data-toggle="modal" data-name="0" class="article" data-target="#largeModal">Read More</u>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <!--Mask color-->
+          <div class="view hm-white-slight">
+            <img
+              class="d-block w-100 i2"
+              src="img/bg2.jpf"
+              alt="Second slide"/>
+            <div class="mask"></div>
+          </div>
+          <div class="carousel-caption">
+            <h3 class="h3-responsive t2">LFNEWS</h3>
+            <u data-toggle="modal" data-name="1" class="article" data-target="#largeModal">Read More</u>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <!--Mask color-->
+          <div class="view hm-white-slight">
+            <img
+              class="d-block w-100 i3"
+              src="img/bg3.jpf"
+              alt="Third slide"/>
+            <div class="mask"></div>
+          </div>
+          <div class="carousel-caption">
+            <h3 class="h3-responsive t3">LFNEWS</h3>
+            <u data-toggle="modal" data-name="2" class="article" data-target="#largeModal">Read More</u>
+          </div>
+        </div>
+      </div>
+      <!--/.Slides-->
+      <!--Controls-->
+      <a
+        class="carousel-control-prev"
+        href="#carousel-example-2"
+        role="button"
+        data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a
+        class="carousel-control-next"
+        href="#carousel-example-2"
+        role="button"
+        data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+      <!--/.Controls-->
+    </div>
+  <!----------- Weather
+    https://home.openweathermap.org/api_keys
+    ------------>
+    <div id="weatherVis">
+      <h2 class="subtitle">Weather</h2>
+      <br />
+      <div class="container ">
+        <div class="form-inline my-2 my-lg-0 justify-content-center">
+          <input
+            id="city"
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Search"
+            aria-label="weatherSearch"/>
+          <button class="btn btn-outline-light my-2 my-sm-0" id="getWeather">
+            🔎
+          </button>
+        </div>
+        <br />
+        <p id="werror" class="error text-center"></p>
+        <div id="weatherResult"></div>
+        <br />
+      </div>
+    </div>
+    <!-- Most Popular -->
+    <h2 class="subtitle">Most Popular</h2>
+    <div class="noResult"><h2>Content Either Not Found or Can't Be Displayed</h2></div>
+    <div class="Home Results"></div>
+      </div>
+      <div role="tabpanel" class="tab-pane fade" id="latest">
+        <div class='container'><br /><h2 class='subtitle'>Latest</h2>
+          <div class="noResult"><h2>Content Either Not Found or Can't Be Displayed</h2></div><div class="Latest Results"></div>
+        </div>
+      </div>
+      <div role="tabpanel" class="tab-pane fade" id="boxing">
+        <div class='container'><br /><h2 class='subtitle'>Boxing</h2><div class="noResult"><h2>Content Either Not Found or Can't Be Displayed</h2></div><div class="Boxing Results"></div></div>
+      </div>
+      <div role="tabpanel" class="tab-pane fade" id="golf">
+        <div class='container'><br /><h2 class='subtitle'>Golf</h2><div class="noResult"><h2>Content Either Not Found or Can't Be Displayed</h2></div><div class="Golf Results"></div></div>
+      </div>
+      <div role="tabpanel" class="tab-pane fade" id="football">
+        <div class='container'><br /><h2 class='subtitle'>Football</h2><div class="noResult"><h2>Content Either Not Found or Can't Be Displayed</h2></div><div class="Football Results"></div></div>
+      </div>
+      <div role="tabpanel" class="tab-pane fade" id="tennis">
+        <div class='container'><br /><h2 class='subtitle'>Tennis</h2><div class="noResult"><h2>Content Either Not Found or Can't Be Displayed</h2></div><div class="Tennis Results"></div></div>
+      </div>
+      <div role="tabpanel" class="tab-pane fade" id="rugby">
+        <div class='container'><br /><h2 class='subtitle'>Rugby</h2><div class="noResult"><h2>Content Either Not Found or Can't Be Displayed</h2></div><div class="Rugby Results"></div></div>
+      </div>
+      <div role="tabpanel" class="tab-pane fade" id="racing">
+        <div class='container'><br /><h2 class='subtitle'>Racing</h2><div class="noResult"><h2>Content Either Not Found or Can't Be Displayed</h2></div><div class="Racing Results"></div></div>  
+      </div>
+      <div role="tabpanel" class="tab-pane fade" id="politics">
+        <div class='container'><br /><h2 class='subtitle'>Politics</h2>
+          <div class="noResult"><h2>Content Either Not Found or Can't Be Displayed</h2></div><div class="Politics Results"></div>
+        </div>
+      </div>
+      <div role="tabpanel" class="tab-pane fade" id="search">
+        <div class='container'><br /><h2 class='subtitle'>Search Results</h2>
+          <div class="noResult"><h2>Content Either Not Found or Can't Be Displayed</h2></div><div class="Search Results"></div>
+        </div>  
+      </div>
+      <div role="tabpanel" class="tab-pane fade" id="contact">
+        <!-- Contact 
+    https://mdbootstrap.com/docs/jquery/forms/contact/
+    -->
+      <br />
+      <h2 class="subtitle">Contact</h2>
+      <div class="container ">
+        <section class="mb-4">
+          <p class="text-center w-responsive mx-auto mb-5">
+            Do you have any questions? Please do not hesitate to contact us
+            directly. <br />Our team will come back to you within a matter of
+            hours to help you.</p>
+          <div class="row">
+            <div class="col-md-9 mb-md-0 mb-5">
+              <form
+                id="contact-form"
+                name="contact-form"
+                action="mail.php"
+                method="POST">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="md-form mb-0">
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        class="form-control"
+                      />
+                      <label for="name" class="">Your name</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="md-form mb-0">
+                      <input
+                        type="text"
+                        id="email"
+                        name="email"
+                        class="form-control"
+                      />
+                      <label for="email" class="">Your email</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="md-form mb-0">
+                      <input
+                        type="text"
+                        id="subject"
+                        name="subject"
+                        class="form-control"
+                      />
+                      <label for="subject" class="">Subject</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="md-form">
+                      <textarea
+                        type="text"
+                        id="message"
+                        name="message"
+                        rows="2"
+                        class="form-control md-textarea"
+                      ></textarea>
+                      <label for="message">Your message</label>
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <div class="text-center text-md-left">
+                <a class="btn btn-primary" onclick="validateForm();">Send 📧</a>
+              </div>
+              <div class="status"></div>
+            </div>
+            <div class="col-md-3 text-center">
+              <ul class="list-unstyled mb-0">
+                <li>
+                  📬
+                  <p>Belfast, BT7 1HS, N.Ireland</p>
+                </li>
+                <li>
+                  📞
+                  <p>028 4321 8448</p>
+                </li>
+                <li>
+                  📧
+                  <p>contact@lfnews.com</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <h4 class="subtitle offices">Offices</h4>
+          <div id="map">
+          </div>
+        </section>
+      </div>
+      </div>
+      <div role="tabpanel" class="tab-pane fade" id="privacy">
+<!-- Privacy
+    https://bootstrap4.com/privacy/
+    -->
+    <br />
+    <h2 class="subtitle">Privacy Policy</h2>
+    <div class="container">
+      <p>
+        Your privacy is very important to us. Accordingly, we have developed
+        this Policy in order for you to understand how we collect, use,
+        communicate and disclose and make use of personal information. The
+        following outlines our privacy policy.
+      </p>
+      <ul>
+        <li>
+          Before or at the time of collecting personal information, we will
+          identify the purposes for which information is being collected.
+        </li>
+        <li>
+          We will collect and use of personal information solely with the
+          objective of fulfilling those purposes specified by us and for other
+          compatible purposes, unless we obtain the consent of the individual
+          concerned or as required by law.
+        </li>
+        <li>
+          We will only retain personal information as long as necessary for
+          the fulfillment of those purposes.
+        </li>
+        <li>
+          We will collect personal information by lawful and fair means and,
+          where appropriate, with the knowledge or consent of the individual
+          concerned.
+        </li>
+        <li>
+          Personal data should be relevant to the purposes for which it is to
+          be used, and, to the extent necessary for those purposes, should be
+          accurate, complete, and up-to-date.
+        </li>
+        <li>
+          We will protect personal information by reasonable security
+          safeguards against loss or theft, as well as unauthorized access,
+          disclosure, copying, use or modification.
+        </li>
+        <li>
+          We will make readily available to customers information about our
+          policies and practices relating to the management of personal
+          information.
+        </li>
+        <li>
+          We are committed to conducting our business in accordance with these
+          principles in order to ensure that the confidentiality of personal
+          information is protected and maintained.
+        </li>
+      </ul>
+      <h4 class="subtitle">Cookie Policy</h4>
+      <p>
+        To enhance your experience on our sites, many of our web pages use
+        “cookies”. Cookies are small text files that we place in your
+        computer’s browser to store your preferences. Cookies, by themselves,
+        do not tell us your email address or other personal information unless
+        you choose to provide this information to us by, for example,
+        registering at one of our sites. Once you choose to provide a web page
+        with personal information, this information may be linked to the data
+        stored in the cookie. A cookie is like an identification card. It is
+        unique to your computer and can only be read by the server that gave
+        it to you.
+      </p>
+      <p>
+        We use cookies to understand site usage and to improve the content and
+        offerings on our sites. For example, we may use cookies to personalise
+        your experience on our web pages (e.g. to recognise you by name when
+        you return to our site). We also may use cookies to offer you products
+        and services.
+      </p>
+      <p>
+        Cookies save you time as they help us to remember who you are. Cookies
+        help us to be more efficient. We can learn about what content is
+        important to you and what is not. We can revise or remove web pages
+        that are not of interest and focus our energies on content you want.
+      </p>
+      <p>
+        If you want to control which cookies you accept. You can configure
+        your browser to accept all cookies or to alert you every time a cookie
+        is offered by a website’s server. Most browsers automatically accept
+        cookies. You can set your browser option so that you will not receive
+        cookies and you can also delete existing cookies from your browser.
+        You may find that some parts of the site will not function properly if
+        you have refused cookies.
+      </p>
+      <p>
+        Please be aware that if you do not configure your browser you will
+        accept cookies provided by this website.
+      </p>
+      <p>
+        How to see cookies that you have accepted. You can configure your
+        browser to accept all cookies or to alert you every time a cookie is
+        offered by a website’s server.
+      </p>
+    </div>
+      </div>
+    </div>
+    <!-- Pop-Up Modal -->
+<div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel"></h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img
+              class="modelimg"
+              src="img/card.jpg"
+              alt="Card image cap"/>
+            <div class="modelcontent">
+            </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <!----------- Cookies Policy & Geolocation
+      ------------>
+    <section
+      id="bottom"
+      class="navbar fixed-bottom navbar-dark bg-danger white">
+      <div id="cookies">
+        LFNEWS requires cookies & geolocation to work, do you?
+        <button
+          class="btn btn-outline-light my-2 my-sm-0"
+          id="accept"
+          type="submit">
+          Accept
+        </button>
+        <button
+          class="btn btn-outline-light my-2 my-sm-0 decline"
+          type="submit">
+          Decline
+        </button>
+      </div>
+    </section>
+    <br />
+    <!----------- Footer ------------>
+    <br />
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <a class="navbar-brand" >LFNEWS</a>
+            <p class="text-justify">
+              <i>LFNEWS.com </i> United Kingdom Belfast Latest in lazy api and fake news
+              creation rest based application produced by UUJ's student Callum
+              Carville. I use the guardian API and steal their news for my
+              project.
+            </p>
+          </div>
+          <div class="col-xs-6 col-md-3">
+            <h6>Nav</h6>
+            <ul class="footer-links">
+              <li><a href="#home" class="submenu" role="tab" data-option="Home" data-toggle="tab">Home</a></li>
+              <li><a href="#latest" data-option="Latest" class="submenu" role="tab" data-toggle="tab">Latest</a></li>
+              <li><a href="#contact" class="submenu" role="tab" data-toggle="tab">Contact</a></li>
+              <li>
+                <a href="#privacy" class="submenu" role="tab" data-toggle="tab">Privacy Policy</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm-12 col-md-3">
+            <h6>Subscribe</h6>
+            <p class="text-justify">
+              Keep Up To Date!
+            </p>
+            <form class="form-inline my-2 my-lg-0" action="https://cmcwebdesign.us12.list-manage.com/subscribe/post?u=06af01bd861db8708810a37b9&amp;id=a5972610b0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+              <input
+                class="form-control mr-sm-2"
+                type="email"
+                value="" 
+                name="EMAIL"
+                id="mce-EMAIL"  
+                placeholder="Email"
+                aria-label="mailchimp"
+                required/>
+              <button class="btn btn-outline-light my-2 my-sm-0" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" type="submit">
+                📧
+              </button>
+              <div class="clear"></div>
+    </div>
+            </form>
+          </div>
+        </div>
+        <hr />
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">
+              Copyright &copy; 2020 All Rights Reserved by
+              <a id="h">LFNEWS</a>.
+            </p>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <li>
+                <a
+                  class="facebook"
+                  href="https://www.facebook.com/cmcwebdesign1/"
+                  ><i class="fa fa-facebook"></i></a>
+              </li>
+              <li>
+                <a class="twitter" href="https://twitter.com/CMC_Web_Design"
+                  ><i class="fa fa-twitter"></i></a>
+              </li>
+              <li>
+                <a
+                  class="linkedin"
+                  href="https://www.linkedin.com/in/c%C3%A1llum-carville-5b1999159/"
+                  ><i class="fa fa-linkedin"></i></a>
+              </li>
+              <li>
+                <a
+                  class="instagram"
+                  href="https://www.instagram.com/cmcwebdesign/"
+                  ><i class="fa fa-instagram"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+<script src="js/production.js"></script>
+<script async="false" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCker-C0LtsLkBS1a2VvlNooUEg12Z2XwA&callback=initMap"
+type="text/javascript"></script>
+<!-- Intro.js for site tour and help -->
